@@ -166,32 +166,35 @@
                             <i class="icon-speedometer"></i><span> Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-level">--- Components</li>
-                    {{-- <li class="treeview">
-                        <a class="waves-effect waves-dark" href="#!"><i
-                                class="icon-briefcase"></i><span> UI Elements</span><i
-                                class="icon-arrow-down"></i>
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="#">
+                            <i class="icon-arrow-right"></i><span> Products</span>
                         </a>
-                        <ul class="treeview-menu"> --}}
-                    <li>
+                    </li>
+                    <li class="treeview">
                         <a class="waves-effect waves-dark" href="accordion.html">
-                            <i class="icon-arrow-right"></i> Accordion</a>
+                            <i class="icon-arrow-right"></i> <span>Employees</span>
+                        </a>
                     </li>
                     <li>
                         <a class="waves-effect waves-dark" href="button.html">
-                            <i class="icon-arrow-right"></i> Button</a>
+                            <i class="icon-arrow-right"></i> <span>Customers</span>
+                        </a>
                     </li>
                     <li>
                         <a class="waves-effect waves-dark" href="label-badge.html">
-                            <i class="icon-arrow-right"></i> Label Badge</a>
+                            <i class="icon-arrow-right"></i> <span>Suppliers</span>
+                        </a>
                     </li>
                     <li>
                         <a class="waves-effect waves-dark" href="bootstrap-ui.html">
-                            <i class="icon-arrow-right"></i> Grid system</a>
+                            <i class="icon-arrow-right"></i> <span>Expense</span>
+                        </a>
                     </li>
                     <li>
                         <a class="waves-effect waves-dark" href="box-shadow.html">
-                            <i class="icon-arrow-right"></i> Box Shadow</a>
+                            <i class="icon-arrow-right"></i> Sales Report
+                        </a>
                     </li>
                     <li>
                         <a class="waves-effect waves-dark" href="color.html">

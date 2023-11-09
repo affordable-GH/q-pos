@@ -14,18 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(MainController::class)->group(function () {  
-    Route::get("/dashboard", "index")->name("dashboard");
-    Route::get("/dashboard/products","products")->name("products");
-    Route::get("/dashboard/orders","orders")->name("orders");
-    Route::get("/dashboard/suppliers","suplliers")->name("suppliers");
-    Route::get("/dashboard/sales-report","salesReport")->name("sales.report");
-    Route::get("/dashboard/products","products")->name("product");
-    Route::get("/dashboard/products","products")->name("product");
-    Route::get("/dashboard/products","products")->name("product");
-    Route::get("/dashboard/products","products")->name("product");
-    Route::get("/dashboard/products","products")->name("product");
+Route::controller(MainController::class)->group(function () {
+  Route::redirect("/", "/dashboard");
+  Route::get("/dashboard", "index")->name("dashboard");
+  Route::get("/dashboard/products", "products")->name("products");
+  Route::get("/dashboard/orders", "orders")->name("orders");
+  Route::get("/dashboard/suppliers", "suppliers")->name("suppliers");
+  Route::get("/dashboard/sales-report", "salesReport")->name("sales.report");
+  Route::get("/dashboard/customers", "customers")->name("customers");
 
-  });
-
-
+  // Route::get("/dashboard/products", "products")->name("product");
+  // Route::get("/dashboard/products", "products")->name("product");
+  // Route::get("/dashboard/products", "products")->name("product");
+  // Route::get("/dashboard/products", "products")->name("product");
+});

@@ -6,380 +6,164 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="stylesheet" href="{{ url('assets/icon/simple-line-icons/css/simple-line-icons.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('assets/fonts/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/Waves/waves.min.css') }}">
     <link rel="stylesheet"
         href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" />
     <link rel="stylesheet" href="assets/plugins/bootstrap-datepicker/css/bootstrap-datetimepicker.css" />
     <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" />
-
-
-    <link rel="stylesheet" href="{{ url('assets/plugins/bootstrap/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/main.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
     <script src="{{ url('assets/plugins/jquery-ui-1.13.2/external/jquery/jquery.js') }}"></script>
     <title>Document</title>
 </head>
 
-<body class="sidebar-mini fixed">
+<body class="overflow-x-hidden">
     <div class="loader-bg">
         <div class="loader-bar">
         </div>
     </div>
-    <div class="wrapper">
-        <!-- Navbar-->
-        <header class="main-header-top hidden-print">
-            <a href="#"
-                class="logo d-flex justify-content-center align-items-center align-content-center my-auto">
-                <h1 class="able-logo">
-                    q-pos
-                </h1>
-            </a>
-            <nav class="navbar navbar-static-top">
-                <!-- Sidebar toggle button-->
-                <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
-                <ul class="top-nav lft-nav">
-                    <form action="" method="get" class="d-inline-flex mt-2">
-                        <input type="search" name="q" id="" class="form-control me-4"
-                            placeholder="search for products, customers" />
-                        <button type="submit" class=" btn btn-sm btn-light">S</button>
-                    </form>
-                </ul>
-                <!-- Navbar Right Menu-->
-                <div class="navbar-custom-menu f-right">
-                    <ul class="top-nav">
-                        <!--Notification Menu-->
-
-                        <li class="dropdown notification-menu">
-                            <a href="#!" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
-                                <i class="icon-bell"></i>
-                                <span class="badge badge-danger header-badge">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="not-head">You have <b class="text-primary">4</b> new notifications.</li>
-                                <li class="bell-notification">
-                                    <a href="javascript:;" class="media">
-                                        <span class="media-left media-icon">
-                                            <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
-                                        </span>
-                                        <div class="media-body"><span class="block">Lisa sent you a mail</span><span
-                                                class="text-muted block-time">2min ago</span></div>
-                                    </a>
-                                </li>
-                                <li class="bell-notification">
-                                    <a href="javascript:;" class="media">
-                                        <span class="media-left media-icon">
-                                            <img class="img-circle" src="assets/images/avatar-2.png" alt="User Image">
-                                        </span>
-                                        <div class="media-body"><span class="block">Server Not Working</span><span
-                                                class="text-muted block-time">20min ago</span></div>
-                                    </a>
-                                </li>
-                                <li class="bell-notification">
-                                    <a href="javascript:;" class="media"><span class="media-left media-icon">
-                                            <img class="img-circle" src="assets/images/avatar-3.png" alt="User Image">
-                                        </span>
-                                        <div class="media-body"><span class="block">Transaction xyz
-                                                complete</span><span class="text-muted block-time">3 hours ago</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="not-footer">
-                                    <a href="#!">See all notifications.</a>
-                                </li>
-                            </ul>
-                        </li>
-                        </li>
-                        <!-- window screen -->
-                        <li class="pc-rheader-submenu">
-                            <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
-                                <i class="icon-size-fullscreen"></i>
-                            </a>
-
-                        </li>
-                        <!-- User Menu-->
-                        <li class="dropdown">
-                            <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-                                <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;"
-                                        alt="User Image"></span>
-                                <span>John <b>Doe</b> <i class=" icofont icofont-simple-down"></i></span>
-
-                            </a>
-                            <ul class="dropdown-menu settings-menu">
-                                <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
-                                <li><a href="#"><i class="icon-user"></i> Profile</a></li>
-                                <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
-                                <li class="p-0">
-                                    <div class="dropdown-divider m-0"></div>
-                                </li>
-                                <li><a href="#"><i class="icon-lock"></i> Lock Screen</a></li>
-                                <li><a href="login1.html"><i class="icon-logout"></i> Logout</a></li>
-
-                            </ul>
-                        </li>
-                    </ul>
-
-                </div>
-            </nav>
-            {{-- <nav class="navbar navbar-static-top">
-                <!-- Sidebar toggle button-->
+    <div class="main-content">
+        <aside class="sidebar fixed-top bg-light text-dark">
+            <div class="sidebar-wrapper">
                 <ul class="list-unstyled">
-                    <a href="#" data-toggle="offcanvas" class="sidebar-toggle d- d-md-none d-lg-none"></a>
-                    <li class="">
-                        <form action="#" method="get" class="d-inline-block">
-                            <input type="search" name="q" class="form-control border-0 otline-0 background-none text-white" placeholder="Search for customer, pruducts ..." />
-                            <button type="submit" class="btn btn-sm btn-outline-dark"><i
-                                    class="fas fa-search"></i></button>
-                        </form>
+                    <li class="nav-item">
+                        <a href="{{ route('dashboard') }}" title="Dashboard"
+                            class="waves-effect waves-dark link nav-link active">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('products') }}" title="Products"
+                            class="waves-effect waves-dark link nav-link">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('customers') }}" title="Customers"
+                            class="waves-effect waves-dark link nav-link">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('suppliers') }}" title="Suppliers"
+                            class="waves-effect waves-dark link nav-link">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Suppliers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('orders') }}" title="Oders" class="waves-effect waves-dark link nav-link">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('sales.report') }}" title="Sales Report"
+                            class="waves-effect waves-dark link nav-link">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Sales Report</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="waves-effect waves-dark link nav-link">
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Dashboard</span>
+                        </a>
                     </li>
                 </ul>
-                <!-- Navbar Right Menu-->
-                <div class="navbar-custom-menu f-right">
-
-                    <ul class="top-nav">
-                        <!--Notification Menu-->
-
-                        <li class="dropdown notification-menu">
-                            <a href="#!" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
-                                <i class="icon-bell"></i>
-                                <span class="badge badge-danger header-badge">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="not-head">You have <b class="text-primary">4</b> new notifications.</li>
-                                <li class="bell-notification">
-                                    <a href="javascript:;" class="media">
-                                        <span class="media-left media-icon">
-                                            <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
-                                        </span>
-                                        <div class="media-body"><span class="block">Lisa sent you a mail</span><span
-                                                class="text-muted block-time">2min ago</span></div>
-                                    </a>
-                                </li>
-                                <li class="bell-notification">
-                                    <a href="javascript:;" class="media">
-                                        <span class="media-left media-icon">
-                                            <img class="img-circle" src="assets/images/avatar-2.png" alt="User Image">
-                                        </span>
-                                        <div class="media-body"><span class="block">Server Not Working</span><span
-                                                class="text-muted block-time">20min ago</span></div>
-                                    </a>
-                                </li>
-                                <li class="bell-notification">
-                                    <a href="javascript:;" class="media"><span class="media-left media-icon">
-                                            <img class="img-circle" src="assets/images/avatar-3.png" alt="User Image">
-                                        </span>
-                                        <div class="media-body"><span class="block">Transaction xyz
-                                                complete</span><span class="text-muted block-time">3 hours ago</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="not-footer">
-                                    <a href="#!">See all notifications.</a>
-                                </li>
-                            </ul>
+                <div class="log-status-wrapper">
+                    <h4 class="log-status-header text-center h6 p-2">
+                        Login Status
+                    </h4>
+                    <ul class="list-unstyled">
+                        <li><span class="fw-semibold"> Login As: </span> username</li>
+                        <li><span class="fw-semibold"> User Type: </span> admin</li>
+                        <li><span class="fw-semibold"> Since: </span> {{ Date('Y-m-d H:i') }}</li>
+                    </ul>
+                </div>
+                <div class="sticky-bottom text-center">
+                    <a href="#" class="btn btn-outline-primary">Logout</a>
+                </div>
+            </div>
+        </aside>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark p-0">
+            <div class="container-fluid">
+                <a href="#" class="btn d- d-md-none" type="button">
+                    <span id="x-toggle" class="fas text-white fa-bars"></span>
+                </a>
+                <div class="brand-wrapper">
+                    <a href="#" class="navbar-brand">Q-POS </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ms-2">
+                        <form class="d-flex my-0 py-0" role="search">
+                            <input class="form-control form-control-lg form-search me-2" type="search"
+                                placeholder="Search for products, customers ..." aria-label="Search">
+                            <button class="btn btn-outline-light p-1" title="Search" type="submit"><i
+                                    class="fas fa-magnifying-glass"></i></button>
+                        </form>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="{{ asset('assets/images/avatar-1.png') }}" alt="" class="img-user" />
+                        <span class="text-white text-capitalize">username</span>
+                    </a>
+                    <ul class="dropdown-menu user-nav shadow outline-0 border-0">
+                        <li>
+                            <h6 class="dropdown-header">Hello, User !</h6>
                         </li>
-                        <!-- window screen -->
-                        <li class="pc-rheader-submenu">
-                            <a href="#" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
-                                <i class="icon-size-fullscreen"></i>
-                            </a>
+                        {{-- <li><a class="dropdown-item" href="#">Action</a></li> --}}
+                        <li><a class="dropdown-item" href="#">Notifications</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
-                        <!-- User Menu-->
-                        <li class="dropdown">
-                            <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-                                <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;"
-                                        alt="User Image"></span>
-                                <span>John <b>Doe</b> <i class=" icofont icofont-simple-down"></i></span>
-
-                            </a>
-                            <ul class="dropdown-menu settings-menu">
-                                <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
-                                <li><a href="#"><i class="icon-user"></i> Profile</a></li>
-                                <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
-                                <li class="p-0">
-                                    <div class="dropdown-divider m-0"></div>
-                                </li>
-                                <li><a href="#"><i class="icon-lock"></i> Lock Screen</a></li>
-                                <li><a href="login1.html"><i class="icon-logout"></i> Logout</a></li>
-
-                            </ul>
+                        <li>
+                            <a class="dropdown-item" href="#"><i class="fas fa-"></i><span>Log Out</span></a>
                         </li>
                     </ul>
                 </div>
-            </nav> --}}
-        </header>
-        <aside class="main-sidebar hidden-print ">
-            <section class="sidebar" id="sidebar-scroll">
-                <!-- Sidebar Menu-->
-                <ul class="sidebar-menu">
-                    <li class="active treeview">
-                        <a class="waves-effect waves-dark" href="#">
-                            <i class="icon-arrow-right"></i><span> Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="treeview">
-                        <a class="waves-effect waves-dark" href="#">
-                            <i class="icon-arrow-right"></i><span> Products</span>
-                        </a>
-                    </li>
-                    <li class="treeview">
-                        <a class="waves-effect waves-dark" href="accordion.html">
-                            <i class="icon-arrow-right"></i> <span>Employees</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="button.html">
-                            <i class="icon-arrow-right"></i> <span>Customers</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="label-badge.html">
-                            <i class="icon-arrow-right"></i> <span>Suppliers</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="bootstrap-ui.html">
-                            <i class="icon-arrow-right"></i> <span>Expense</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="box-shadow.html">
-                            <i class="icon-arrow-right"></i> Sales Report
-                        </a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="color.html">
-                            <i class="icon-arrow-right"></i>
-                            Color</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="light-box.html">
-                            <i class="icon-arrow-right"></i> Light Box</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="notification.html">
-                            <i class="icon-arrow-right"></i> Notification</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="panels-wells.html">
-                            <i class="icon-arrow-right"></i> Panels-Wells</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="tabs.html">
-                            <i class="icon-arrow-right"></i>
-                            Tabs</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="tooltips.html">
-                            <i class="icon-arrow-right"></i> Tooltips</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-dark" href="typography.html">
-                            <i class="icon-arrow-right"></i> Typography</a>
-                    </li>
-                    {{-- </ul>
-                    </li> --}}
+                <style>
+                    .dropdown-menu[data-bs-popper] {
+                        right: 0;
+                        left: auto;
+                        transition: all 0.3s ease-out;
+                    }
 
-                    {{-- <li class="treeview"><a class="waves-effect waves-dark" href="#!"><i
-                                class="icon-chart"></i><span> Charts &amp; Maps</span><span
-                                class="label label-success menu-caption">New</span><i class="icon-arrow-down"></i></a>
-                        <ul class="treeview-menu">
-                            <li><a class="waves-effect waves-dark" href="float-chart.html"><i
-                                        class="icon-arrow-right"></i> Float Charts</a></li>
-                            <li><a class="waves-effect waves-dark" href="morris-chart.html"><i
-                                        class="icon-arrow-right"></i> Morris Charts</a></li>
-                        </ul>
-                    </li> --}}
-                </ul>
-            </section>
-        </aside>
-        <div class="content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="main-header">
-                        <h4>Dashboard</h4>
-                    </div>
-                </div>
-                <div class="row dashboard-header">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card dashboard-product">
-                            <span>Products</span>
-                            <h2 class="dashboard-total-products">4500</h2>
-                            <span class="label label-warning">Sales</span>Arriving Today
-                            <div class="side-box">
-                                <i class="ti-signal text-warning-color"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card dashboard-product">
-                            <span>Products</span>
-                            <h2 class="dashboard-total-products">37,500</h2>
-                            <span class="label label-primary">Views</span>View Today
-                            <div class="side-box ">
-                                <i class="ti-gift text-primary-color"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card dashboard-product">
-                            <span>Products</span>
-                            <h2 class="dashboard-total-products">$<span>30,780</span></h2>
-                            <span class="label label-success">Sales</span>Reviews
-                            <div class="side-box">
-                                <i class="ti-direction-alt text-success-color"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card dashboard-product">
-                            <span>Products</span>
-                            <h2 class="dashboard-total-products">$<span>30,780</span></h2>
-                            <span class="label label-danger">Sales</span>Reviews
-                            <div class="side-box">
-                                <i class="ti-rocket text-danger-color"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    .dropdown-menu.user-nav {
+                        right: -15px !important;
+                        top: 55px !important;
+                    }
+
+                    .dropdown-menu.user-nav.show {
+                        border-radius: 0;
+                        transition: all 0.3s ease-out;
+                    }
+                </style>
             </div>
-            <div class="fixed-button">
-                <a href="#!" class="btn btn-md btn-primary">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
-                </a>
-            </div>
+        </nav>
+        <div class="container-fluid">
+            main content
+            @yield('content')
         </div>
     </div>
     <script src="{{ url('assets/plugins/select2/js/select2.min.js') }}"></script>
     <script src="{{ url('assets/plugins/jquery-ui-1.13.2/jquery-ui.min.js') }}"></script>
-    <script src="{{ url('assets/plugins/tether/dist/js/tether.min.js') }}"></script>
-    <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ url('assets/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
-    <script src="{{ url('assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js') }}"></script>
-    <script src="{{ url('assets/plugins/classie/classie.js') }}"></script>
-    <script src="{{ url('assets/plugins/notification/js/bootstrap-growl.min.js') }}"></script>
-    <script src="{{ url('assets/plugins/countdown/js/jquery.counterup.js') }}"></script>
-    <script src="{{ url('assets/plugins/moment/min/moment.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('assets/plugins/moment/moment.js') }}"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <script type="text/javascript" src="{{ url('assets/js/main.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url('assets/pages/elements.js') }}"></script>
-    <script src="{{ url('assets/js/menu.min.js') }}"></script>
-    <script>
-        var $window = $(window);
-        var nav = $('.fixed-button');
-        $window.scroll(function() {
-            if ($window.scrollTop() >= 200) {
-                nav.addClass('active');
-            } else {
-                nav.removeClass('active');
-            }
-        });
-    </script>
+    <script src="{{ asset('assets/plugins/Waves/waves.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url('assets/js/main.js') }}"></script>
+    <script src="{{ url('assets/js/menu.js') }}"></script>
+    @yield('js')
 </body>
 
 </html>

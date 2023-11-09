@@ -8,11 +8,12 @@
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="stylesheet" href="{{ asset('assets/fonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/Waves/waves.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
     <link rel="stylesheet"
         href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" />
+        <link rel="stylesheet" href="{{ asset('assets/plugins/datatables/dataTables.bootstrap5.min.css') }}">
     <link rel="stylesheet" href="assets/plugins/bootstrap-datepicker/css/bootstrap-datetimepicker.css" />
     <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" />
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
     <script src="{{ url('assets/plugins/jquery-ui-1.13.2/external/jquery/jquery.js') }}"></script>
     <title>Document</title>
@@ -160,6 +161,8 @@
     <script type="text/javascript" src="assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/Waves/waves.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/js/main.js') }}"></script>
     <script src="{{ url('assets/js/menu.js') }}"></script>

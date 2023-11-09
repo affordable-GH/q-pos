@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="stylesheet" href="{{ asset('assets/fonts/font-awesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/plugins/Waves/waves.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+    <link rel="apple-touch-icon" href="{{ url('favicon.png') }}">
+    <link rel="stylesheet" href="{{ url('assets/fonts/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/plugins/Waves/waves.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/bootstrap.css') }}">
     <link rel="stylesheet"
-        href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" />
-        <link rel="stylesheet" href="{{ asset('assets/plugins/datatables/dataTables.bootstrap5.min.css') }}">
-    <link rel="stylesheet" href="assets/plugins/bootstrap-datepicker/css/bootstrap-datetimepicker.css" />
-    <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" />
-    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+        href="{{ asset('assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') }}" />
+    <link rel="stylesheet" href="{{ url('assets/plugins/datatables/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/plugins/bootstrap-datepicker/css/bootstrap-datetimepicker.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url('assets/plugins/bootstrap-daterangepicker/daterangepicker.css') }}" />
+    <link rel="stylesheet" href="{{ url('assets/css/index.css') }}">
     <script src="{{ url('assets/plugins/jquery-ui-1.13.2/external/jquery/jquery.js') }}"></script>
     <title>Document</title>
 </head>
@@ -25,12 +26,12 @@
         </div>
     </div>
     <div class="main-content">
-        <aside class="sidebar fixed-top bg-light text-dark">
+        <aside class="sidebar fixed-top bg-light text-dark" id="sidebar">
             <div class="sidebar-wrapper">
                 <ul class="list-unstyled">
                     <li class="nav-item">
                         <a href="{{ route('dashboard') }}" title="Dashboard"
-                            class="waves-effect waves-dark link nav-link active">
+                            class="waves-effect waves-dark link nav-link">
                             <i class="fas fa-chevron-right"></i>
                             <span>Dashboard</span>
                         </a>
@@ -93,7 +94,7 @@
         </aside>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark p-0">
             <div class="container-fluid">
-                <a href="#" class="btn d- d-md-none" type="button">
+                <a href="javascript:void(0)" class="btn d- d-md-none" data-toggle-nav="sidebar" type="button">
                     <span id="x-toggle" class="fas text-white fa-bars"></span>
                 </a>
                 <div class="brand-wrapper">
@@ -112,7 +113,7 @@
                 <div class="dropdown">
                     <a href="javascript:void(0)" class="nav-link" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="{{ asset('assets/images/avatar-1.png') }}" alt="" class="img-user" />
+                        <img src="{{ url('assets/images/avatar-1.png') }}" alt="" class="img-user" />
                         <span class="text-white text-capitalize">username</span>
                     </a>
                     <ul class="dropdown-menu user-nav shadow outline-0 border-0">
@@ -157,13 +158,15 @@
     <script src="{{ url('assets/plugins/select2/js/select2.min.js') }}"></script>
     <script src="{{ url('assets/plugins/jquery-ui-1.13.2/jquery-ui.min.js') }}"></script>
     <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.js') }}"></script>
-    <script src="{{ asset('assets/plugins/moment/moment.js') }}"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datetimepicker.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/Waves/waves.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/moment/moment.js') }}"></script>
+    <script type="text/javascript"
+        src="{{ asset('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/bootstrap-daterangepicker/daterangepicker.js') }}">
+    </script>
+    <script src="{{ url('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/datatables/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="{{ url('assets/plugins/Waves/waves.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/js/main.js') }}"></script>
     <script src="{{ url('assets/js/menu.js') }}"></script>
     @yield('js')

@@ -1,14 +1,9 @@
-/*Template Name: Quantum Able Bootstrap 4 Admin Template
- Author: Codedthemes
- Email: support@phopenixcoded.net
- File: main.js
- */
-'use strict';
-$(window).on('load', function() {
+"use strict";
+$(window).on("DOMContentLoaded", function () {
     var $window = $(window);
-    $('.loader-bar').animate({ width:$window.width()},2000);
-    setTimeout(function() {
-        while ($('.loader-bar').width() == $window.width()) {
+    $(".loader-bar").animate({ width: $window.width() }, 2000);
+    setTimeout(function () {
+        while ($(".loader-bar").width() == $window.width()) {
             removeloader();
             break;
         }
@@ -16,55 +11,96 @@ $(window).on('load', function() {
 
     //Welcome Message (not for login page)
     function notify(message, type) {
-        $.growl({
-            message: message
-        }, {
-            type: type,
-            allow_dismiss: false,
-            label: 'Cancel',
-            className: 'btn-xs btn-inverse',
-            placement: {
-                from: 'bottom',
-                align: 'right'
+        $.growl(
+            {
+                message: message,
             },
-            delay: 2500,
-            animate: {
-                enter: 'animated fadeInRight',
-                exit: 'animated fadeOutRight'
-            },
-            offset: {
-                x: 30,
-                y: 30
+            {
+                type: type,
+                allow_dismiss: false,
+                label: "Cancel",
+                className: "btn-xs btn-inverse",
+                placement: {
+                    from: "bottom",
+                    align: "right",
+                },
+                delay: 2500,
+                animate: {
+                    enter: "animated fadeInRight",
+                    exit: "animated fadeOutRight",
+                },
+                offset: {
+                    x: 30,
+                    y: 30,
+                },
             }
-        });
-    };
+        );
+    }
 
     // notify('Welcome to Quantum Admin', 'inverse');
-    $('.loader-bg').fadeOut('slow');
-
+    $(".loader-bg").fadeOut("slow");
 });
-// function removeloader(){
-//     $('.loader-bg').fadeOut('slow', function() {
-//         $('.loader-bg').remove();
-//     });
-// };
-$(document).ready(function() {
+$(document).ready(function () {
+    $(function () {
+        var sidebar = $(".sidebar");
+        var navbar = $(".navbar");
 
+        $('[data-toggle-nav="sidebar"').on("click", () => {
+            $("#backdrop").toggleClass("sidebar-backdrop show");
+            $(".sidebar.fixed-top#sidebar").toggleClass("show");
+            $("#x-toggle").toggleClass("fa-bars");
+            $("#x-toggle").toggleClass("fa-times");
+        });
+        $("#backdrop").on("click", () => {
+            $(".sidebar.sidebar-offcanvas").toggleClass("show");
+            $("#backdrop").toggleClass("sidebar-backdrop show");
+            $("#x-toggle").toggleClass("fa-bars");
+            $("#x-toggle").toggleClass("fa-times");
+        });
 
+        var current = location.pathname
+            .split("/")
+            .slice(-1)[0]
+            .replace(/^\/|\/$/g, "");
+            console.log();
+        function addActiveClass(element) {
+            if (current === "dashboard") {
+                // return null;
+                $("ul>li>a.link.nav-link").first().addClass("active");
+                // $("ul>li>a.link.nav-link").addClass("active");
+            } else {
+                if (element.attr("href").indexOf(current) !== -1) {
+                    element.addClass("active");
+                }
+            }
+        }
+        $("ul>li>a").each(function () {
+            var $this = $(this);
+            addActiveClass($this);
+        });
+        $("ul>li>a", sidebar).each(function () {
+            var $this = $(this);
+            addActiveClass($this);
+        });
+    });
 });
-
-
 
 // toggle full screen
 function toggleFullScreen() {
-    if (!document.fullscreenElement && // alternative standard method
-        !document.mozFullScreenElement && !document.webkitFullscreenElement) { // current working methods
+    if (
+        !document.fullscreenElement && // alternative standard method
+        !document.mozFullScreenElement &&
+        !document.webkitFullscreenElement
+    ) {
+        // current working methods
         if (document.documentElement.requestFullscreen) {
             document.documentElement.requestFullscreen();
         } else if (document.documentElement.mozRequestFullScreen) {
             document.documentElement.mozRequestFullScreen();
         } else if (document.documentElement.webkitRequestFullscreen) {
-            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            document.documentElement.webkitRequestFullscreen(
+                Element.ALLOW_KEYBOARD_INPUT
+            );
         }
     } else {
         if (document.cancelFullScreen) {
@@ -77,7 +113,52 @@ function toggleFullScreen() {
     }
 }
 
-$(window).scroll(function() {
-   
+$(window).scroll(() => {
+    $(window).scrollTop() > 100
+        ? $(".scrollTop").fadeIn()
+        : $(".scrollTop").fadeOut();
 });
-
+$(".scrollTop").click((e) => {
+    e.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, 0);
+    return 0;
+});
+function customDate() {
+    var _date = document.querySelectorAll(".date"),
+        date = new Date(),
+        y = date.getFullYear(),
+        m = date.getMonth(),
+        d = date.getDay(),
+        f = date.getUTCDate();
+    let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ];
+    var CurrentDate = days[d] + ", " + f + " " + months[m] + ", " + y;
+    _date.forEach((elem) => {
+        elem.innerText = CurrentDate;
+    });
+}
+customDate();
+setInterval(() => {
+    $(".time").text(new Date().toLocaleTimeString());
+}, 1000);
